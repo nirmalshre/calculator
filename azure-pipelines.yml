@@ -7,17 +7,15 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'Ubuntu 16.04'
 
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '8.x'
   displayName: 'Install Node.js'
 
 - script: |
     npm install
     npm run build
-    npm test
-  displayName: 'npm install, build, and test'
-  
+  displayName: 'npm install and build' 
